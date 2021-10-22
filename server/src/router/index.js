@@ -1,8 +1,10 @@
-const Router = require('express').Router()
+'use strict'
+
+const router = require('express').Router()
 
 // sanity check
-Router.get('/', (req, res) => {
+router.get('/', (req, res) => {
   res.send('server is live!')
 })
 
-module.exports = Router
+module.exports = router
