@@ -3,13 +3,15 @@ version: '3.1'
 services:
   db:
     image: mysql:8.0
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'ian123'
       MYSQL_DATABASE: 'wa'
     ports:
       - '3306:3306'
     networks:
-      - dev-network
+      dev-network:
+        ipv4_address: 172.16.238.10
 
   server:
     build:
@@ -31,4 +33,7 @@ services:
 
 networks:
   dev-network:
-    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: '172.16.238.0/24'
