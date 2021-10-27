@@ -1,16 +1,16 @@
 'use strict'
 
-const express = require('express')
-const router = require('./src/router')
-
-// .ENV
-const PORT = 8080
-const HOST = '0.0.0.0'
+const { GraphQLServer } = require('graphql-yoga')
+const path = require('path')
+const resolvers = require('./src/resolvers')
+const models = require('./src/models')
 
 // App
-const app = express()
-app.use(router)
+const server = new GraphQLServer({
+  typeDefs: path.resolve(__dirname, './src/schema.graphql'),
+  resolvers,
+})
 
-app.listen(PORT, HOST, () => {
-  console.log(`server running at port ${PORT}`)
+models.sequelize.sync().then((_) => {
+  server.start()
 })
