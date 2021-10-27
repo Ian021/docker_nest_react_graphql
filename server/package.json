@@ -9,7 +9,7 @@
     "dev": "nodemon server"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "graphql-yoga": "^1.18.3",
     "mysql2": "^2.3.2",
     "sequelize": "^6.7.0"
   },
