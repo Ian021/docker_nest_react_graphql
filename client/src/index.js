@@ -5,6 +5,8 @@ import './index.css'
 import client from './services/apollo/index'
 import { ApolloProvider } from '@apollo/client'
 
+import 'antd/dist/antd.css'
+
 import Home from './pages/Home'
 
 ReactDOM.render(
