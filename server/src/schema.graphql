@@ -6,9 +6,10 @@ type User {
 }
 
 type Query {
-  users: [User]
+  getUsers(nome: String, cpf: Int, email: String): [User]
 }
 
 type Mutation {
   createUser(nome: String!, cpf: Int!, email: String!): User
+  deleteUser(id: ID!): Boolean
 }
