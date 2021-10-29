@@ -5,23 +5,22 @@ module.exports = {
     users: (_, { nome, cpf, email }) => {
       const filters = {}
 
-      if (nome != undefined && nome != '') {
-        filters.nome = { [models.Sequelize.Op.substring]: nome }
+      const addFilter = (field, fieldName) => {
+        if (field !== undefined && field !== '') {
+          filters[fieldName] = { [models.Sequelize.Op.substring]: field }
+        }
       }
 
-      if (cpf != undefined && cpf != 0) {
-        filters.cpf = { [models.Sequelize.Op.substring]: cpf }
-      }
-
-      if (email != undefined && email != '') {
-        filters.email = { [models.Sequelize.Op.substring]: email }
-      }
+      addFilter(nome, 'nome')
+      addFilter(cpf, 'cpf')
+      addFilter(email, 'email')
 
       return models.student.findAll({
         where: filters,
       })
     },
   },
+
   Mutation: {
     createUser: (_, { nome, cpf, email }) =>
       models.student.create({ nome, cpf, email }),
