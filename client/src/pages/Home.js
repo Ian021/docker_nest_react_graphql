@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import StudentsTable from '../components/StudentsTable'
 import StudentFilter from '../components/StudentFilter'
 import { useQuery } from '@apollo/client'
-import { USERS } from '../services/apollo/queries'
+import { STUDENTS } from '../services/apollo/queries'
 import { Space } from 'antd'
 
 const filterOptions = [
@@ -28,7 +28,7 @@ const Home = () => {
     query.refetch({ variables: { [filter]: text } })
   }, [text, filter])
 
-  const query = useQuery(USERS, {
+  const query = useQuery(STUDENTS, {
     variables: {
       [filter]: text,
     },

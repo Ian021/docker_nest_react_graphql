@@ -1,8 +1,8 @@
 import { gql } from '@apollo/client'
 
-const USERS = gql`
-  query users($nome: String, $cpf: String, $email: String) {
-    users(nome: $nome, cpf: $cpf, email: $email) {
+const STUDENTS = gql`
+  query students($nome: String, $cpf: String, $email: String) {
+    students(nome: $nome, cpf: $cpf, email: $email) {
       id
       nome
       email
@@ -11,4 +11,4 @@ const USERS = gql`
   }
 `
 
-export { USERS }
+export { STUDENTS }

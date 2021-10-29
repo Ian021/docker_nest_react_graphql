@@ -1,4 +1,4 @@
-type User {
+type Student {
   id: ID!
   nome: String!
   cpf: String!
@@ -6,10 +6,10 @@ type User {
 }
 
 type Query {
-  users(nome: String, cpf: String, email: String): [User]
+  students(nome: String, cpf: String, email: String): [Student]
 }
 
 type Mutation {
-  createUser(nome: String!, cpf: String!, email: String!): User
-  deleteUser(id: ID!): Boolean
+  createStudent(nome: String!, cpf: String!, email: String!): Student
+  deleteStudent(id: ID!): Boolean
 }

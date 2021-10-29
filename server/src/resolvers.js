@@ -2,7 +2,7 @@ const models = require('./models')
 
 module.exports = {
   Query: {
-    users: (_, { nome, cpf, email }) => {
+    students: (_, { nome, cpf, email }) => {
       const filters = {}
 
       const addFilter = (field, fieldName) => {
@@ -22,9 +22,9 @@ module.exports = {
   },
 
   Mutation: {
-    createUser: (_, { nome, cpf, email }) =>
+    createStudent: (_, { nome, cpf, email }) =>
       models.student.create({ nome, cpf, email }),
-    deleteUser: (_, { id }) =>
+    deleteStudent: (_, { id }) =>
       models.student.destroy({
         where: {
           id,

@@ -23,7 +23,7 @@ const StudentsTable = ({ loading, error, data }) => {
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error :(</p>
 
-  const dataSource = data.users
+  const dataSource = data.students
 
   return (
     <Table
