@@ -10,6 +10,8 @@ services:
       MYSQL_DATABASE: 'wa'
     ports:
       - '3306:3306'
+    volumes:
+      - ./mysql:/var/lib/mysql
     networks:
       dev-network:
         ipv4_address: 172.16.238.10
