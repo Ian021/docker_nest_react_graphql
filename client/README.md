@@ -1,6 +1,10 @@
-To run the projecct, cd into the project directory, and run
+### Instruções para executar o frontend
 
-### `docker-compose up`
+É necessário ter o docker e docker-compose instalados
 
-To run the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+abra o terminal na pasta "client", dentro da pasta do projeto "waproject"
+execute o comando:
+
+`docker-compose up`
+
+O cliente pode ser acessado em: http://localhost:3000/
