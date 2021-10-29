@@ -13,28 +13,26 @@ const filterOptions = [
 
 const Home = () => {
   const [text, setText] = useState('')
-  const [variables, setVariables] = useState({})
   const [filter, setFilter] = useState(filterOptions[0].filter)
 
   const changeFilter = (newFilter) => {
     setFilter(newFilter)
     setText('')
-    setVariables({})
   }
 
   const updateText = (newText) => {
     setText(newText)
-    const obj = {}
-    obj[filter] = newText
-    setVariables(obj)
   }
 
   useEffect(() => {
-    console.log(variables)
-    query.refetch(variables)
+    query.refetch({ variables: { [filter]: text } })
   }, [text, filter])
 
-  const query = useQuery(USERS, variables)
+  const query = useQuery(USERS, {
+    variables: {
+      [filter]: text,
+    },
+  })
   const { loading, error, data } = query
 
   return (
