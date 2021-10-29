@@ -9,7 +9,7 @@
     "dev": "npx nodemon server"
   },
   "dependencies": {
-    "graphql-yoga": "^1.18.3",
+    "graphql-yoga": "^1.12.1",
     "mysql2": "^2.3.2",
     "sequelize": "^6.7.0"
   },
