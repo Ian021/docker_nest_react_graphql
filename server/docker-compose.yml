@@ -2,6 +2,7 @@ version: '3.1'
 
 services:
   db:
+    container_name: mysql_db
     image: mysql:8.0
     restart: always
     environment:
@@ -14,6 +15,7 @@ services:
         ipv4_address: 172.16.238.10
 
   server:
+    container_name: node_server
     build:
       context: .
       dockerfile: ./Dockerfile
