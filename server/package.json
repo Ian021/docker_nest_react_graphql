@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server"
+    "dev": "npx nodemon server"
   },
   "dependencies": {
     "graphql-yoga": "^1.18.3",
