@@ -6,7 +6,7 @@ type User {
 }
 
 type Query {
-  getUsers(nome: String, cpf: Int, email: String): [User]
+  users(nome: String, cpf: Int, email: String): [User]
 }
 
 type Mutation {

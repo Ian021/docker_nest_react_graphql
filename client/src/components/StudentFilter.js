@@ -3,13 +3,13 @@ import { Input, Select } from 'antd'
 
 const StudentFilter = ({
   text,
-  setText,
+  updateText,
   filter,
   changeFilter,
   filterOptions,
 }) => {
   const onChange = (event) => {
-    setText(event.target.value)
+    updateText(event.target.value)
   }
 
   return (

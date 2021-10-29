@@ -2,7 +2,7 @@ const models = require('./models')
 
 module.exports = {
   Query: {
-    getUsers: (_, { nome, cpf, email }) => {
+    users: (_, { nome, cpf, email }) => {
       const filters = {}
 
       if (nome != undefined && nome != '') {
