@@ -5,6 +5,10 @@
 abra o terminal na pasta "server", dentro da pasta do projeto "waproject"
 execute o comando:
 
+`yarn`
+
+e depois o comando:
+
 `docker-compose up`
 
 ### Banco de Dados
