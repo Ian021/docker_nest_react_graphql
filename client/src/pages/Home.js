@@ -25,7 +25,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    query.refetch({ variables: { [filter]: text } })
+    query.refetch({ [filter]: text })
   }, [text, filter])
 
   const query = useQuery(STUDENTS, {
