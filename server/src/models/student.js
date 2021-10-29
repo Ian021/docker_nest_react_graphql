@@ -14,7 +14,7 @@ const Student = (sequelize, DataTypes) => {
         allowNull: false,
       },
       cpf: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       email: {
