@@ -1,6 +1,6 @@
 ### Instruções para executar o backend
 
-É necessário ter o docker e docker-compose instalados
+É necessário ter o docker instalado
 
 abra o terminal na pasta "server", dentro da pasta do projeto "waproject"
 execute o comando:
@@ -9,7 +9,7 @@ execute o comando:
 
 e depois o comando:
 
-`docker-compose up`
+`docker compose up`
 
 ### Banco de Dados
 
@@ -28,6 +28,6 @@ execute o comando:
 
 e depois o comando
 
-`docker-compose up`
+`docker compose up`
 
 O cliente pode ser acessado em: http://localhost:3000/
