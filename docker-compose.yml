@@ -1,8 +1,21 @@
 version: '3.1'
 
 services:
+  client:
+    container_name: gql_client
+    build:
+      dockerfile: ./client/Dockerfile
+    image: wa_client
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client:/usr/src/app
+    tmpfs:
+      - /tmp
+
   db:
-    container_name: mysql_db
+    container_name: mysql_db_gql
     image: mysql:8.0
     restart: always
     environment:
@@ -12,32 +25,20 @@ services:
       - '3306:3306'
     volumes:
       - ./mysql:/var/lib/mysql
-    networks:
-      dev-network:
-        ipv4_address: 172.16.238.10
 
   server:
-    container_name: node_server
+    container_name: gql_server
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./server/Dockerfile
     image: wa_server
     restart: always
     depends_on:
       - db
     ports:
       - 4000:4000
-    # volumes:
-    #   - ./:/usr/src/app
-    working_dir: /usr/src/app
-    networks:
-      - dev-network
+    volumes:
+      - ./server:/usr/src/app
+
     tmpfs:
       - /tmp
-
-networks:
-  dev-network:
-    ipam:
-      driver: default
-      config:
-        - subnet: '172.16.238.0/24'
